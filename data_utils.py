@@ -91,13 +91,13 @@ class ValDatasetFromFolder(Dataset):
     def __len__(self):
         return len(self.tm1_filenames)
 
-class TestDatasetFromFolder(Dataset):
+class ValDatasetFromFolder(Dataset):
     def __init__(self,cfg ,mode='train'):
-        time1_path = cfg.DATAPATH_TIME1
-        time2_path = cfg.DATAPATH_TIME2
-        label_path = cfg.DATAPATH_LABEL
+        time1_path = cfg.VALPATH_TIME1
+        time2_path = cfg.VALPATH_TIME2
+        label_path = cfg.VALPATH_LABEL
 
-        super(TestDatasetFromFolder,self).__init__()
+        super(ValDatasetFromFolder,self).__init__()
         namelist=[imgname for imgname in os.listdir(time1_path)]
         self.tm1_filenames=[os.path.join(time1_path,name) for name in namelist ]
         self.tm2_filenames = [os.path.join(time2_path, name) for name in namelist]
