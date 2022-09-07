@@ -65,9 +65,9 @@ class LoadDatasetFromFolder(Dataset):
 
 class ValDatasetFromFolder(Dataset):
     def __init__(self,cfg ,mode='train'):
-        time1_path = cfg.DATAPATH_TIME1
-        time2_path = cfg.DATAPATH_TIME2
-        label_path = cfg.DATAPATH_LABEL
+        time1_path = cfg.VALPATH_TIME1
+        time2_path = cfg.VALPATH_TIME2
+        label_path = cfg.VALPATH_LABEL
 
         super(ValDatasetFromFolder,self).__init__()
         namelist=[imgname for imgname in os.listdir(time1_path)]
