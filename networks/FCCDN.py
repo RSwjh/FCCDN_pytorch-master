@@ -210,12 +210,12 @@ class FCCDN(torch.nn.Module):
         self.conv_out = torch.nn.Conv2d(8,1,kernel_size=3,stride=1,padding=1)
         self.conv_out_class = torch.nn.Conv2d(channel_list[3],1, kernel_size=1,stride=1,padding=0)
 
-    def forward(self, img1,img2):
-        e1_1 = self.block1(img1)
+    def forward(self, x):
+        e1_1 = self.block1(x[0])
         e2_1 = self.block2(e1_1)
         e3_1 = self.block3(e2_1)
         y1 = self.block4(e3_1)
-        e1_2 = self.block1(img2)
+        e1_2 = self.block1(x[1])
         e2_2 = self.block2(e1_2)
         e3_2 = self.block3(e2_2)
         y2 = self.block4(e3_2)
