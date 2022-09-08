@@ -69,7 +69,7 @@ class LoadDatasetFromFolder(Dataset):
         tm1 = cv2.cvtColor(tm1, cv2.COLOR_BGR2RGB)
         tm2 = cv2.imread(self.tm2_filenames[index])
         tm2 = cv2.cvtColor(tm2, cv2.COLOR_BGR2RGB)
-        lab = cv2.imread(self.lab_filenames[index])
+        lab = cv2.imread(self.lab_filenames[index],0)
 
         data_album = self.album_transform(image=lab, masks=[tm1, tm2])
         tm1 = data_album['masks'][0]
