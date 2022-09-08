@@ -5,7 +5,7 @@ import os
 import numpy as np
 import torch
 import cv2
-import albumentation as A
+import albumentations as A
 def calMetric_iou(predict, label):
     tp = np.sum(np.logical_and(predict == 1, label == 1))
     fp = np.sum(predict==1)
